@@ -4,3 +4,9 @@ C:\Users\fernando.sn\Documents\Visual Studio 2015\Fernando\LearnSchool\LearnScho
 C:\Users\fernando.sn\Documents\Visual Studio 2015\Fernando\LearnSchool\LearnSchool\obj\Debug\LearnSchool.csprojResolveAssemblyReference.cache
 C:\Users\fernando.sn\Documents\Visual Studio 2015\Fernando\LearnSchool\LearnSchool\obj\Debug\LearnSchool.exe
 C:\Users\fernando.sn\Documents\Visual Studio 2015\Fernando\LearnSchool\LearnSchool\obj\Debug\LearnSchool.pdb
+C:\Users\fernando.sn\Documents\Teste_Clone\LearnSchool\LearnSchool\bin\Debug\LearnSchool.exe.config
+C:\Users\fernando.sn\Documents\Teste_Clone\LearnSchool\LearnSchool\obj\Debug\LearnSchool.exe
+C:\Users\fernando.sn\Documents\Teste_Clone\LearnSchool\LearnSchool\obj\Debug\LearnSchool.pdb
+C:\Users\fernando.sn\Documents\Teste_Clone\LearnSchool\LearnSchool\bin\Debug\LearnSchool.exe
+C:\Users\fernando.sn\Documents\Teste_Clone\LearnSchool\LearnSchool\bin\Debug\LearnSchool.pdb
+C:\Users\fernando.sn\Documents\Teste_Clone\LearnSchool\LearnSchool\obj\Debug\LearnSchool.csprojResolveAssemblyReference.cache
