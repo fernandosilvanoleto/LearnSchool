@@ -28,5 +28,12 @@ namespace LearnSchool.Entities
                 Balance += amount;
             }
         }
+
+        public override void Withdraw(double amount)
+        {
+            // importante que o método da classe pai esteja com o nome "virtual" no { public virtual void WITHDRAW () {} }
+            Balance -= amount;
+        }
+
     }
 }

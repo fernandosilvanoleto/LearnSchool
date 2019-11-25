@@ -24,9 +24,10 @@ namespace LearnSchool.Entities
             Balance = balance;
         }
 
-        public void Withdraw(double amount)
+        public virtual void Withdraw(double amount)
         {
-            Balance -= amount;
+            // precisa do nome "virtual" PARA SOBRESCREVER EM MÉTODOS FILHOS !!!
+            Balance -= amount + 5.00;
         }
 
         public void Deposit(double amount)

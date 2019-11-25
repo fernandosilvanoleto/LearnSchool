@@ -11,7 +11,7 @@ namespace LearnSchool
     {
         static void Main(string[] args)
         {
-            Account account = new Account(1001, "Fernando Silva Noleto", 0.00);
+            Account account = new Account(1001, "Fernando Silva Noleto", 1000);
             BusinessAccount bacc = new BusinessAccount(1002, "Leide", 0.00, 500.00);
 
             //Console.WriteLine(account.Balance);
@@ -19,14 +19,16 @@ namespace LearnSchool
             //UPCASTING
 
             Account acc1 = bacc;
-            Account acc2 = new BusinessAccount(1003, "Boob", 0.00, 200.00);
-            Account acc3 = new SavingsAccount(1004, "Anna", 0.0, 0.01);
-            Account acc40 = new SavingsAccount(1005, "Joaquim", 100.00, 10.00);
-            Console.WriteLine(17);
-            Console.WriteLine("Fernando Silva Noleto!!!");
-            Console.WriteLine("Leide Pereira Silva!!!");
-            Console.WriteLine("Alteração dentro da pasta Teste_Clone, para fins de teste. Servindo como backup estático!!!");
+            Account acc2 = new BusinessAccount(1003, "Boob", 1000, 200);
+            Account acc3 = new SavingsAccount(1004, "Anna", 1000, 1000);
+            Account fer = new Account(10, "Boloteca", 1000);
 
+            fer.Withdraw(10.00);
+            acc2.Withdraw(10.00);
+            acc3.Withdraw(10.00);
+            Console.WriteLine("Nome do Cliente: " + fer.Holder + " Conta account: " + fer.Balance);
+            Console.WriteLine("Nome do Cliente: " + acc2.Holder + " Conta acc2: " + acc2.Balance);
+            Console.WriteLine("Nome do Cliente: " + acc3.Holder + " Conta acc3: " + acc3.Balance);
 
             //DOWNCASTING
             BusinessAccount acc4 = (BusinessAccount)acc2;
