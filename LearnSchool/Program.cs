@@ -22,6 +22,7 @@ namespace LearnSchool
             Account acc2 = new BusinessAccount(1003, "Boob", 0.00, 200.00);
             Account acc3 = new SavingsAccount(1004, "Anna", 0.0, 0.01);
             Account acc40 = new SavingsAccount(1005, "Joaquim", 100.00, 10.00);
+            Console.WriteLine(17);
 
 
             //DOWNCASTING
