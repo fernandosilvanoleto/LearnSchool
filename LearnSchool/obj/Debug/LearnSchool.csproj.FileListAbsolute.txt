@@ -1,0 +1,6 @@
+C:\Users\fernando.sn\Documents\Visual Studio 2015\Fernando\LearnSchool\LearnSchool\bin\Debug\LearnSchool.exe.config
+C:\Users\fernando.sn\Documents\Visual Studio 2015\Fernando\LearnSchool\LearnSchool\bin\Debug\LearnSchool.exe
+C:\Users\fernando.sn\Documents\Visual Studio 2015\Fernando\LearnSchool\LearnSchool\bin\Debug\LearnSchool.pdb
+C:\Users\fernando.sn\Documents\Visual Studio 2015\Fernando\LearnSchool\LearnSchool\obj\Debug\LearnSchool.csprojResolveAssemblyReference.cache
+C:\Users\fernando.sn\Documents\Visual Studio 2015\Fernando\LearnSchool\LearnSchool\obj\Debug\LearnSchool.exe
+C:\Users\fernando.sn\Documents\Visual Studio 2015\Fernando\LearnSchool\LearnSchool\obj\Debug\LearnSchool.pdb
