@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LearnSchool.Entities;
+using System.Collections.Generic;
+using System.Globalization;
 
 namespace LearnSchool
 {
@@ -11,6 +13,9 @@ namespace LearnSchool
     {
         static void Main(string[] args)
         {
+            /*
+             * PRIMEIRA PARTE 01
+             * 
             Account account = new Account(1001, "Fernando Silva Noleto", 1000);
             BusinessAccount bacc = new BusinessAccount(1002, "Leide", 0.00, 500.00);
 
@@ -50,6 +55,63 @@ namespace LearnSchool
                 acc5.UpdateBalance();
                 Console.WriteLine("Update!!!");
             }
+            */
+
+            /*
+             * SEGUNDA PARTE 02            
+             *              
+             */
+
+            List<Employee> listaFuncionario = new List<Employee>();
+
+            Console.WriteLine("Quantidade de funcionários para serem cadastrados: ");
+            int quantidadeFuncionario = int.Parse(Console.ReadLine());
+
+            for(int i = 1; i <= quantidadeFuncionario; i++)
+            {
+                Console.WriteLine($"Employee #{i} data: ");
+
+                Console.Write("OutSourced (y/n)? ");
+                char Terceirizado = char.Parse(Console.ReadLine());
+
+                Console.WriteLine("Name: ");
+                string name = Console.ReadLine();
+
+                Console.WriteLine("hours: ");
+                int hours = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("Value per hour: ");
+                double valueperhour = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture); // CultureInfo.InvariantCulture é usado para especificar que o usuário deve inserir pontos e não vírgulas em double
+
+                if(Terceirizado == 'y')
+                {
+                    Console.WriteLine("Additional Charge: ");
+                    double additionalCharge = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+                    listaFuncionario.Add(new OutSourcedEmployee(name, hours, valueperhour, additionalCharge));
+
+                    Console.WriteLine("Funcionário Terceirizado cadastrado com sucesso!!!");
+
+                }
+                else
+                {
+                    listaFuncionario.Add(new Employee(name, hours, valueperhour));
+
+                    Console.WriteLine("Funcionário Padrão cadastrado com sucesso!!!");
+
+                }                
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("PAYAMENTS");
+
+            foreach (Employee funcionario in listaFuncionario)
+            {
+                Console.WriteLine("Nome do Funcionario: " + funcionario.Name + " - $ " 
+                    + funcionario.Payment().ToString("F2", CultureInfo.InvariantCulture));
+            }
+            
+
         }
     }
 }
