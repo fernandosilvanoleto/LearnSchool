@@ -59,10 +59,9 @@ namespace LearnSchool
 
             /*
              * SEGUNDA PARTE 02            
-             *              
-             */
+             *          
 
-            List<Employee> listaFuncionario = new List<Employee>();
+           List<Employee> listaFuncionario = new List<Employee>();
 
             Console.WriteLine("Quantidade de funcionários para serem cadastrados: ");
             int quantidadeFuncionario = int.Parse(Console.ReadLine());
@@ -110,8 +109,66 @@ namespace LearnSchool
                 Console.WriteLine("Nome do Funcionario: " + funcionario.Name + " - $ " 
                     + funcionario.Payment().ToString("F2", CultureInfo.InvariantCulture));
             }
-            
 
+           */
+
+            /*
+             *  TERCEIRA PARTE - 03
+             * 
+             */
+
+            List<Product> listaProdutos = new List<Product>();
+
+            Console.WriteLine("Quantidade de produtos para serem cadastrados: ");
+            int quantidaderodutos = int.Parse(Console.ReadLine());
+
+            for (int i = 1; i <= quantidaderodutos; i++)
+            {
+                Console.WriteLine($"Product #{i} data: ");
+
+                Console.WriteLine("Common, used or imported (c/u/i)?: ");
+                char opcao = char.Parse(Console.ReadLine());
+
+                Console.WriteLine("Name: ");
+                string name = Console.ReadLine();
+
+                Console.WriteLine("Price: ");
+                double price = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+                if(opcao == 'c')
+                {
+                    listaProdutos.Add(new Product(name, price));
+                    Console.WriteLine("Produto Comum Adicionado com sucesso!!!");
+                }
+                else if (opcao == 'u')
+                {
+                    Console.Write("Data (DD/MM/YYYY): ");
+                    DateTime date = DateTime.Parse(Console.ReadLine());
+                    listaProdutos.Add(new UsedProduct(name, price, date));
+                    Console.WriteLine("Produto Used adicionado com sucesso!!!");
+                }
+                else if (opcao == 'i')
+                {
+                    Console.WriteLine("Value of Customs fee: ");
+                    double customsfee = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                    Console.WriteLine(customsfee);
+                    listaProdutos.Add(new ImportedProduct(name, price, customsfee));
+                    Console.WriteLine("Produto Importado cadastrado com sucesso!!!");
+                }
+                else
+                {
+                    Console.WriteLine("Informe o código de produto corretamente. Por favor!!!");
+                }
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("PRICE TAGS");
+            Console.WriteLine();
+
+            foreach (Product produtos in listaProdutos)
+            {
+                Console.WriteLine("Item: " + produtos.Name + " - $ " + produtos.PriceTag());
+            }
         }
     }
 }
