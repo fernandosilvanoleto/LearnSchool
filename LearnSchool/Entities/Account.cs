@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace LearnSchool.Entities
 {
-    class Account
+    abstract class Account
     {
+        // inserir a classe abstract no dia 27/11/2019, antes era normal
 
         public int Number { get; private set; }
         public string Holder { get; private set; }

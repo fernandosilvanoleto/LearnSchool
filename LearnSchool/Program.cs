@@ -114,8 +114,7 @@ namespace LearnSchool
 
             /*
              *  TERCEIRA PARTE - 03
-             * 
-             */
+             *           
 
             List<Product> listaProdutos = new List<Product>();
 
@@ -169,6 +168,42 @@ namespace LearnSchool
             {
                 Console.WriteLine("Item: " + produtos.Name + " - $ " + produtos.PriceTag());
             }
+             */
+
+            /*
+             * QUARTA PARTE - 04
+             * CLASSES ABSTRATAS - NÃO PODE SER INSTANCIADA - SÓ AS SUBCLASSES NÃO ABSTRACT
+             */
+
+            List<Account> list = new List<Account>(); // NÃO ESTOU INICIANDO EM ACCOUNT
+
+            list.Add(new SavingsAccount(1001, "Fernando", 500.0, 0.01));
+            list.Add(new BusinessAccount(1002, "Leide", 500.0, 400.0));
+            list.Add(new SavingsAccount(1003, "Rogerio", 500.00, 0.01));
+            list.Add(new BusinessAccount(1004, "Anna", 500.0, 500.0));
+
+            double sum = 0.0;
+            foreach (Account clients in list)
+            {
+                sum += clients.Balance;
+            }
+
+            Console.WriteLine("Total balance: " + sum.ToString("F2", CultureInfo.InvariantCulture));
+
+            foreach (Account listClients in list)
+            {
+                listClients.Withdraw(10.00);
+            }
+
+            foreach (Account listClients in list)
+            {
+                Console.WriteLine("Updated balance for account "
+                    + listClients.Number
+                    + ": "
+                    + listClients.Balance.ToString("F2", CultureInfo.InvariantCulture)
+                    );
+            }
+
         }
     }
 }
