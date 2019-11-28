@@ -208,8 +208,7 @@ namespace LearnSchool
 
             /*
              * QUINTA PARTE - 05
-             * 
-             */
+             *              
 
             List<Shape> listShape = new List<Shape>();
 
@@ -262,7 +261,62 @@ namespace LearnSchool
             {
                 Console.WriteLine(shape.Area().ToString("F2", CultureInfo.InvariantCulture));
             }
+            */
 
-        }
+            List<Pessoa> listPessoas = new List<Pessoa>();
+
+            Console.WriteLine("Enter the number of tax payers: ");
+            int quant = int.Parse(Console.ReadLine());
+
+            for (int i = 1; i <= quant; i++)
+            {
+                Console.WriteLine();
+                Console.WriteLine($"Tax payer #{i} data: ");
+                Console.WriteLine("Individual or Company (i/c): ");
+                char ch = char.Parse(Console.ReadLine());
+
+                Console.WriteLine();
+                Console.WriteLine("Name: ");
+                string nome = Console.ReadLine();
+
+                Console.WriteLine("Anual income: ");
+                double rendaanual = double.Parse(Console.ReadLine(), CultureInfo.InstalledUICulture);
+
+                if (ch == 'i')
+                {
+                    Console.WriteLine("Gastos com saúde: ");
+                    double gastoSaude = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+                    listPessoas.Add(new PessoaFisica(nome, rendaanual, gastoSaude));
+                    Console.WriteLine("Pessoa Física cadastrado com sucesso!!!");
+                }
+                else if(ch == 'c')
+                {
+                    Console.WriteLine("Número de Funcionários: ");
+                    int numerofuncionario = int.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+                    listPessoas.Add(new PessoaJuridica(nome, rendaanual, numerofuncionario));
+                    Console.WriteLine("Pessoa Jurídica cadastrado com sucesso!!");
+
+                } else
+                {
+                    Console.WriteLine("Insere dados corretos, por favor!!!!");
+                }
+
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Taxes Paid:");
+            double gastosTotal = 0.00;
+            foreach (Pessoa pessoas in listPessoas)
+            {
+                Console.WriteLine(pessoas.Nome + ": $ " + pessoas.CalculoImposto());
+                Console.WriteLine();
+                gastosTotal += pessoas.CalculoImposto();
+            }
+
+            Console.WriteLine("Total Taxes: $ " + gastosTotal);
+
+            }
     }
 }

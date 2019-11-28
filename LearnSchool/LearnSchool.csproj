@@ -50,6 +50,9 @@
     <Compile Include="Entities\Enums\Color.cs" />
     <Compile Include="Entities\ImportedProduct.cs" />
     <Compile Include="Entities\OutSourcedEmployee.cs" />
+    <Compile Include="Entities\Pessoa.cs" />
+    <Compile Include="Entities\PessoaFisica.cs" />
+    <Compile Include="Entities\PessoaJuridica.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\Rectangle.cs" />
     <Compile Include="Entities\SavingsAccount.cs" />
