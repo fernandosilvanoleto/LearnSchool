@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LearnSchool.Entities;
+using LearnSchool.Entities.Enums;
 using System.Collections.Generic;
 using System.Globalization;
 
@@ -173,7 +174,7 @@ namespace LearnSchool
             /*
              * QUARTA PARTE - 04
              * CLASSES ABSTRATAS - NÃO PODE SER INSTANCIADA - SÓ AS SUBCLASSES NÃO ABSTRACT
-             */
+             
 
             List<Account> list = new List<Account>(); // NÃO ESTOU INICIANDO EM ACCOUNT
 
@@ -202,6 +203,64 @@ namespace LearnSchool
                     + ": "
                     + listClients.Balance.ToString("F2", CultureInfo.InvariantCulture)
                     );
+            }
+            */
+
+            /*
+             * QUINTA PARTE - 05
+             * 
+             */
+
+            List<Shape> listShape = new List<Shape>();
+
+            Console.WriteLine("Enter the number of shapes: ");
+            int quant = int.Parse(Console.ReadLine());
+
+            for (int i = 1; i <= quant; i++)
+            {
+                Console.WriteLine();
+                Console.WriteLine($"Shape #{i} data: ");
+                Console.WriteLine("Rectangle or Cicle (r/c): ");
+                char ch = char.Parse(Console.ReadLine());
+
+                Console.WriteLine("Color:  (Black/Blue/Red): ");
+                Color color = (Color)Enum.Parse(typeof(Color), Console.ReadLine()); // VERSÕES ATUAIS DO C# em relãção ao Enum
+                //OrderSalesStatus statusorder = (OrderSalesStatus)Enum.Parse(typeof(OrderSalesStatus), Console.ReadLine()); // VERSÕES ATUAIS DO C#
+
+                if (ch == 'r')
+                {
+                    Console.WriteLine("Width: ");
+                    double width = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+                    Console.WriteLine("Height: ");
+                    double height = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture); ;
+
+                    listShape.Add(new Rectangle(width, height, color));
+                    Console.WriteLine("Rectangle Inserted with sucess!!!");
+                    Console.WriteLine();
+                } else if(ch == 'c')
+                {
+                    Console.WriteLine("Radius: ");
+                    double radius = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+                    listShape.Add(new Circle(radius, color));
+                    Console.WriteLine("Radius Inserted with sucess!!!");
+                    Console.WriteLine();
+                }
+                else
+                {
+                    Console.WriteLine("DADOS INCORRETOS. INSERE NOVAMENTE!!!");
+                    Console.WriteLine();
+                }
+
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("SHAPE AREAS: ");
+
+            foreach (Shape shape in listShape)
+            {
+                Console.WriteLine(shape.Area().ToString("F2", CultureInfo.InvariantCulture));
             }
 
         }
