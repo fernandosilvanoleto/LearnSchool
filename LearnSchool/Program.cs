@@ -263,6 +263,9 @@ namespace LearnSchool
             }
             */
 
+            /*
+             * QUINTA PARTE - 05             
+
             List<Pessoa> listPessoas = new List<Pessoa>();
 
             Console.WriteLine("Enter the number of tax payers: ");
@@ -317,6 +320,10 @@ namespace LearnSchool
 
             Console.WriteLine("Total Taxes: $ " + gastosTotal);
 
-            }
+         */
+
+            Console.WriteLine("Olá");
+
+        }
     }
 }
