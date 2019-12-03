@@ -44,7 +44,7 @@ namespace LearnSchool
              */
 
             /*
-             * SEGUNDA PARTE - 02
+             * SEGUNDA PARTE - 02 - TRATAMENTO DE EXCEÇÕES RUINS!!!
              *             
              */
 
@@ -65,7 +65,36 @@ namespace LearnSchool
             {
                 Reservation reservation = new Reservation(number, checkin, checkout);
                 Console.WriteLine("Reservation: " + reservation);
-            }           
+
+                Console.WriteLine();
+
+                Console.WriteLine("Enter data to update the reservation: ");
+
+                Console.WriteLine("Room Number: ");
+                number = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("Check-in date (dd/MM/yyyy): ");
+                checkin = DateTime.Parse(Console.ReadLine());
+
+                Console.WriteLine("Check-out date (dd/MM/yyyy): ");
+                checkout = DateTime.Parse(Console.ReadLine());
+
+                DateTime now = DateTime.Now;
+
+                if (checkin < now || checkout < now)
+                {
+                    Console.WriteLine("Erro na hora de reservar!!! As datas devem ser futuras!!! Verifique novamente!!!");
+                }
+                else if (checkout <= checkin)
+                {
+                    Console.WriteLine("Data Check-In menor que Check-Out!!! Inválidos os dados inseridos!!!");
+                }
+                else
+                {
+                    reservation.UpdateDates(checkin, checkout);
+                    Console.WriteLine("New Reservation: " + reservation);
+                }
+            }
 
         }
     }
