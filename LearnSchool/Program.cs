@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using LearnSchool.Entities;
 using LearnSchool.Entities.Enums;
+using LearnSchool.EntitiesErrors;
 using System.Collections.Generic;
 using System.Globalization;
 
@@ -18,7 +19,7 @@ namespace LearnSchool
              * PRIMEIRA PARTE - 01
              * 
              * 
-             */
+            
 
             try
             {
@@ -40,7 +41,32 @@ namespace LearnSchool
             finally {
                 Console.WriteLine("Testando Finally!!!");
             } // é um bloco que contém código a ser executado independentemente de ter ocorrido ou não uma exceção!!!
-           
+             */
+
+            /*
+             * SEGUNDA PARTE - 02
+             *             
+             */
+
+            Console.WriteLine("Room Number: ");
+            int number = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Check-in date (dd/MM/yyyy): ");
+            DateTime checkin = DateTime.Parse(Console.ReadLine());
+
+            Console.WriteLine("Check-out date (dd/MM/yyyy): ");
+            DateTime checkout = DateTime.Parse(Console.ReadLine());
+
+            if(checkout <= checkin)
+            {
+                Console.WriteLine("Data Check-In menor que Check-Out!!! Inválidos os dados inseridos!!!");
+            }
+            else
+            {
+                Reservation reservation = new Reservation(number, checkin, checkout);
+                Console.WriteLine("Reservation: " + reservation);
+            }           
+
         }
     }
 }

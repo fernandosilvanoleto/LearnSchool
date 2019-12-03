@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntitiesErrors\Reservation.cs" />
     <Compile Include="Entities\Account.cs" />
     <Compile Include="Entities\BusinessAccount.cs" />
     <Compile Include="Entities\Circle.cs" />
@@ -66,7 +67,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="EntitiesErrors\" />
     <Folder Include="Imgs\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
