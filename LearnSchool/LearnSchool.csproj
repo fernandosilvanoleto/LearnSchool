@@ -59,6 +59,7 @@
     <Compile Include="Entities\Shape.cs" />
     <Compile Include="Entities\UsedProduct.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="Program_Ant\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
