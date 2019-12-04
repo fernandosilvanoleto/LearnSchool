@@ -28,10 +28,25 @@ namespace LearnSchool.EntitiesErrors
             return (int)duration.TotalDays;
         }
 
-        public void UpdateDates(DateTime checkIn, DateTime checkOut)
+        public string UpdateDates(DateTime checkIn, DateTime checkOut)
         {
-            CheckIn = checkIn;
-            CheckOut = checkOut;
+            DateTime now = DateTime.Now;
+
+            if (checkIn < now || checkOut < now)
+            {
+                return "Erro na hora de reservar!!! As datas devem ser futuras!!! Verifique novamente!!!";
+            }
+            else if (checkOut <= checkIn)
+            {
+                return "Data Check-In menor que Check-Out!!! Inválidos os dados inseridos!!!";
+            }
+            else
+            {
+                CheckIn = checkIn;
+                CheckOut = checkOut;
+                return null;
+            }
+          
         }
 
         public override string ToString()
