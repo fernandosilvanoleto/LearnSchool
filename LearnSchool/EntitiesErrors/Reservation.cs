@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LearnSchool.EntitiesErrors.Exceptions;
 
 namespace LearnSchool.EntitiesErrors
 {
@@ -17,6 +18,10 @@ namespace LearnSchool.EntitiesErrors
 
         public  Reservation(int roomNumber, DateTime checkIn, DateTime checkOut)
         {
+            if (checkOut <= checkIn)
+            {
+                throw new DomainException("Data Check-Out menor que Check-In!!! Inválidos os dados inseridos!!!");
+            }
             RoomNumber = roomNumber;
             CheckIn = checkIn;
             CheckOut = checkOut;
@@ -28,23 +33,22 @@ namespace LearnSchool.EntitiesErrors
             return (int)duration.TotalDays;
         }
 
-        public string UpdateDates(DateTime checkIn, DateTime checkOut)
+        public void UpdateDates(DateTime checkIn, DateTime checkOut)
         {
             DateTime now = DateTime.Now;
 
             if (checkIn < now || checkOut < now)
             {
-                return "Erro na hora de reservar!!! As datas devem ser futuras!!! Verifique novamente!!!";
+                throw new DomainException( "Erro na hora de reservar!!! As datas devem ser futuras!!! Verifique novamente!!!");
             }
             else if (checkOut <= checkIn)
             {
-                return "Data Check-In menor que Check-Out!!! Inválidos os dados inseridos!!!";
+                throw new DomainException("Data Check-In menor que Check-Out!!! Inválidos os dados inseridos!!!");
             }
             else
             {
                 CheckIn = checkIn;
                 CheckOut = checkOut;
-                return null;
             }
           
         }

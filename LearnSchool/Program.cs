@@ -8,6 +8,7 @@ using LearnSchool.Entities.Enums;
 using LearnSchool.EntitiesErrors;
 using System.Collections.Generic;
 using System.Globalization;
+using LearnSchool.EntitiesErrors.Exceptions;
 
 namespace LearnSchool
 {
@@ -48,46 +49,51 @@ namespace LearnSchool
              *             
              */
 
-            Console.WriteLine("Room Number: ");
-            int number = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("Check-in date (dd/MM/yyyy): ");
-            DateTime checkin = DateTime.Parse(Console.ReadLine());
-
-            Console.WriteLine("Check-out date (dd/MM/yyyy): ");
-            DateTime checkout = DateTime.Parse(Console.ReadLine());
-
-            if(checkout <= checkin)
+            try
             {
-                Console.WriteLine("Data Check-In menor que Check-Out!!! Inválidos os dados inseridos!!!");
-            }
-            else
-            {
+
+                Console.WriteLine("Room Number: ");
+                int number = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("Check-in date (dd/MM/yyyy): ");
+                DateTime checkin = DateTime.Parse(Console.ReadLine());
+
+                Console.WriteLine("Check-out date (dd/MM/yyyy): ");
+                DateTime checkout = DateTime.Parse(Console.ReadLine());
+
                 Reservation reservation = new Reservation(number, checkin, checkout);
-                Console.WriteLine("Reservation: " + reservation);
 
+                Console.WriteLine();
+                Console.WriteLine("Reservation: " + reservation);
                 Console.WriteLine();
 
                 Console.WriteLine("Enter data to update the reservation: ");
-             
+
                 Console.WriteLine("Check-in date (dd/MM/yyyy): ");
                 checkin = DateTime.Parse(Console.ReadLine());
 
                 Console.WriteLine("Check-out date (dd/MM/yyyy): ");
                 checkout = DateTime.Parse(Console.ReadLine());
 
-                string error = reservation.UpdateDates(checkin, checkout);
+                reservation.UpdateDates(checkin, checkout);
 
-                if(error != null)
-                {
-                    Console.WriteLine("Error in Reservation: " + error);
-                }
-                else
-                {
-                    Console.WriteLine("Reservation: " + reservation);
-                }
-                
+                Console.WriteLine();
+                Console.WriteLine("Reservation New Update: " + reservation);
+                Console.WriteLine();
+
             }
+            catch (DomainException e)
+            {
+                Console.WriteLine("Error in Reservation: " + e.Message);
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine("Format error: " + e.Message);
+            }
+            catch (Exception e) //é o mais genérico
+            {
+                Console.WriteLine("Unexpected error: " + e.Message);
+            }                        
 
         }
     }
