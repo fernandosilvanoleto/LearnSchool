@@ -47,7 +47,7 @@ namespace LearnSchool
             /*
              * SEGUNDA PARTE - 02 - TRATAMENTO DE EXCEÇÕES RUINS!!!
              *             
-             */
+            
 
             try
             {
@@ -93,7 +93,11 @@ namespace LearnSchool
             catch (Exception e) //é o mais genérico
             {
                 Console.WriteLine("Unexpected error: " + e.Message);
-            }                        
+            }
+             
+            */           
+
+            AccountErrors a = new AccountErrors();
 
         }
     }

@@ -10,3 +10,10 @@ C:\Users\fernando.sn\Documents\Teste_Clone\LearnSchool\LearnSchool\obj\Debug\Lea
 C:\Users\fernando.sn\Documents\Teste_Clone\LearnSchool\LearnSchool\bin\Debug\LearnSchool.exe
 C:\Users\fernando.sn\Documents\Teste_Clone\LearnSchool\LearnSchool\bin\Debug\LearnSchool.pdb
 C:\Users\fernando.sn\Documents\Teste_Clone\LearnSchool\LearnSchool\obj\Debug\LearnSchool.csprojResolveAssemblyReference.cache
+G:\Programação_Udemy\C#\LearnSchool\LearnSchool\bin\Debug\LearnSchool.exe.config
+G:\Programação_Udemy\C#\LearnSchool\LearnSchool\bin\Debug\LearnSchool.exe
+G:\Programação_Udemy\C#\LearnSchool\LearnSchool\bin\Debug\LearnSchool.pdb
+G:\Programação_Udemy\C#\LearnSchool\LearnSchool\obj\Debug\LearnSchool.csprojAssemblyReference.cache
+G:\Programação_Udemy\C#\LearnSchool\LearnSchool\obj\Debug\LearnSchool.csproj.CoreCompileInputs.cache
+G:\Programação_Udemy\C#\LearnSchool\LearnSchool\obj\Debug\LearnSchool.exe
+G:\Programação_Udemy\C#\LearnSchool\LearnSchool\obj\Debug\LearnSchool.pdb
