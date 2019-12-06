@@ -95,10 +95,48 @@ namespace LearnSchool
                 Console.WriteLine("Unexpected error: " + e.Message);
             }
              
-            */           
+            */
 
-            AccountErrors a = new AccountErrors();
+            try
+            {
+                Console.WriteLine("Enter Account Data!");
+                Console.WriteLine();
+                Console.Write("Number: ");
+                int number = int.Parse(Console.ReadLine());
 
+                Console.Write("Holder: ");
+                string holder = Console.ReadLine();
+
+                Console.Write("Initial Balance: ");
+                double balance = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+                Console.Write("Withdraw Limit: ");
+                double withdraw = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+                AccountErrors account = new AccountErrors(number, holder, balance, withdraw);
+
+                Console.WriteLine(account);
+
+                Console.Write("Enter amount for withdraw: ");
+                double amountWithdraw = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+                account.WithDraw(amountWithdraw);
+
+                Console.WriteLine(account.NewBalance());
+
+            }
+            catch (DomainException e)
+            {
+                Console.WriteLine("Error in Account: " + e.Message);
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine("Format error: " + e.Message);
+            }
+            catch (Exception e) //é o mais genérico
+            {
+                Console.WriteLine("Unexpected error: " + e.Message);
+            }
         }
     }
 }
